@@ -1,0 +1,9 @@
+name: repository-dispatch-event
+on:
+  - repository_dispatch
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🐧 This job is now running ${{ toJson(github.event.client_payload) }}"
